@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="/complaint.css">
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+form .type {
+  font-weight: bold; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="number"],
+  form select,
+  form textarea {
+    font-size: 0.875rem;
+  }
+
+  button {
+    font-size: 0.875rem;
+  }
+}
+
+  </style>
+  
+</head>
+<body>
+
+<div class="cont">
+  <form action="/complaints" method="post" class="container">
+    <label>Enter Name:</label>
+    <input type="text" name="username" class="name">
+    <label>Enter Email:</label>
+    <input type="email" name="email" class="email">
+    <label>Registered No:</label>
+    <input type="number" name="registered" class="registered">
+    <label>Dept:</label>
+    <select name="dept" class="dept">dept
+      <option value="it">Information technology</option>
+      <option value="cse">cse</option>
+      <option value="civil">civil</option>
+      <option value="ece">ece</option>
+      <option value="eee">eee</option>
+      <option value="aids">aids</option>
+      <option value="aiml">aiml</option>
+      <option value="mech">mech</option>
+    </select>
+    <label>complaint Type:</label>
+    <input type="text" name="type" class="type">
+    <label>Description:</label>
+    <textarea row="16" cols="10" id="description" name="description"></textarea>
+    <button action="submit">submit</button>
+  </form>
+  </div>
+ 
+</body>
+</html>
+

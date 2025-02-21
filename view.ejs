@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .matter {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .matter p {
+            margin: 10px 0;
+        }
+        .matter p strong {
+            color: #333;
+        }
+        .matter p:last-of-type {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <% for(let i=0;i < fetched.length ; i++){ %>
+            <div class="matter">
+                <p><strong>UserName:</strong><%= fetched[i].username %></p>
+                <p><strong>Email:</strong><%= fetched[i].email %></p>
+                <p><strong>Registered:</strong><%= fetched[i].registered %></p>
+                <p><strong>Department:</strong><%= fetched[i].dept %></p>
+                <p><strong>Complaint:</strong><%= fetched[i].type %></p>
+                <p><strong>Description:</strong><%= fetched[i].description %></p>
+            </div>
+        <% } %>
+        <a href="/home">Go to Home..</a>
+
+
+    </div>
+</body>
+</html>

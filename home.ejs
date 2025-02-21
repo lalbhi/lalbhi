@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/complaints">Push a Complaint</a></li>
+        </ul>
+    </nav>
+    <div class="dept">
+        <form method="post" action="/home">
+            <select name="dept" onchange="this.form.submit()">
+                <option value="department">Department</option>
+                <option value="it">IT</option>
+                <option value="cse">CSE</option>
+                <option value="civil">Civil</option>
+                <option value="ece">ECE</option>
+                <option value="eee">EEE</option>
+                <option value="aids">AIDS</option>
+                <option value="aiml">AIML</option>
+                <option value="mech">MECH</option>
+                <option value="all">All</option>
+            </select>
+        </form>
+    </div>
+    <div class="container">
+        <% for (let i = 0; i < fetched.length; i++) { %>
+            <div class="complaint">
+                <p><strong><%= fetched[i].type %></strong></p>
+                <p><%= fetched[i].description %></p>
+                <form method="post" action="/likes" class="likebox">
+                    <input type="hidden" name="thumbsup" value="<%= fetched[i]._id %>">
+                    <button type="submit" class="symbols">&#x1F44D; <p> <span class="counter"><%= fetched[i].likes %></span></p></button>
+                    <button type="submit" class="view"><a href="/view">View more</a></button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
